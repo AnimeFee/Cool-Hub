@@ -1,14 +1,14 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({Name = "Cool Hub", HidePremium = false, SaveConfig = true, IntroText = "key system"})
+local Window = OrionLib:MakeWindow({Name = "Cool Hub", HidePremium = false, SaveConfig = true, IntroText = "Cool Hub"})
 
 -- Notification
 OrionLib:MakeNotification({
   Name = "Logged in!",
   Content = "You are logged in as " .. Player.Name .. ".",
   Image = "rbxassetid://4483345998",
-  Time = 5
+  Time = 3
 })
 
 -- Values
