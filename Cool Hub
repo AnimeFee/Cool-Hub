@@ -54,7 +54,7 @@ end
 
 function keynoti()
   OrionLib:MakeNotification({
-    Name = "correct key",
+    Name = "Correct Key",
     Content = "access granted",
     Image = "rbxassetid://4483345998",
     Time = 5
@@ -63,7 +63,7 @@ end
 
 function nokeynoti()
   OrionLib:MakeNotification({
-    Name = "incorrect key",
+    Name = "Incorrect Key",
     Content = "no access granted incorrect key",
     Image = "rbxassetid://4483345998",
     Time = 5
@@ -76,7 +76,7 @@ end
 
 -- Tabs
 local Tab = Window:MakeTab({
-  Name = "Key",
+  Name = "Colowner",
   Icon = "rbxassetid://4483345998",
   PremiumOnly = false
 })
@@ -88,7 +88,7 @@ local KeySys = Tab:AddSection({Name="Key System"});
 -- Textbox
 KeySys:AddTextbox({
   Name = "Enter key",
-  Default = "Key here",
+  Default = "Enter Key Here",
   TextDisappear = true,
   Callback = function(Value)
     getgenv().keyinput = Value
@@ -97,7 +97,7 @@ KeySys:AddTextbox({
 
 -- Buttons
 KeySys:AddButton({
-  Name = "check key",
+  Name = "Check Key",
   Callback = function()
     if getgenv().keyinput == getgenv().key then
       makescript()
