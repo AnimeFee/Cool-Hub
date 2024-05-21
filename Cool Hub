@@ -1,0 +1,86 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Cool Hub", HidePremium = false, SaveConfig = true, IntroText = "key system"})
+
+-- Notification
+OrionLib:MakeNotification({
+  Name = "Logged in!",
+  Content = "You are logged in as " .. Player.Name .. ".",
+  Image = "rbxassetid://4483345998",
+  Time = 5
+})
+
+-- Values
+getgenv().key = "hello"
+getgenv().keyinput = "string"
+
+-- Functions
+function makescript()
+  destroy()
+end
+
+function keynoti()
+  OrionLib:MakeNotification({
+    Name = "correct key",
+    Content = "access granted",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+  })
+end
+
+function nokeynoti()
+  OrionLib:MakeNotification({
+    Name = "incorrect key",
+    Content = "no access granted incorrect key",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+  })
+end
+
+function destroy()
+  game:GetService("CoreGui").Orion:Destroy()
+end
+
+-- Tabs
+local Tab = Window:MakeTab({
+  Name = "Key",
+  Icon = "rbxassetid://4483345998",
+  PremiumOnly = false
+})
+
+local Discord = Tab:AddSection({Name="Join Our Discord To Get Key"});
+local KeySys = Tab:AddSection({Name="Key System"});
+
+
+-- Textbox
+KeySys:AddTextbox({
+  Name = "Enter key",
+  Default = "Key here",
+  TextDisappear = true,
+  Callback = function(Value)
+    getgenv().keyinput = Value
+  end
+})
+
+-- Buttons
+KeySys:AddButton({
+  Name = "check key",
+  Callback = function()
+    if getgenv().keyinput == getgenv().key then
+      makescript()
+      keynoti()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/AnimeFee/scriptsfr/main/CoolHub", true))()
+    else
+      nokeynoti()
+    end
+  end
+})
+
+Discord:AddButton({
+  Name = "Copy Discord Link",
+  Callback = function()
+      setclipboard("https://discord.gg/88dfBYQk")
+      print("Discord link copied to clipboard")
+  end    
+})
