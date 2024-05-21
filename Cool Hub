@@ -1,6 +1,5 @@
 local blacklistedUsers = {
     "omega24119",
-    "PldtHome0816",
     }
 
 -- Function to check if a user is blacklisted
