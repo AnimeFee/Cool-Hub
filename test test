@@ -1,12 +1,21 @@
+-- Load DrRay Library
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 
+-- Create a window
 local window = DrRayLibrary:Load("DrRay!", "Default")
+
+-- Create a tab
 local tab1 = DrRayLibrary.newTab("Tab 1", "ImageIdHere")
 
-tab1.newInput("Input", "Prints your input.", function(text)
-    print("Entered text in Tab 1: " .. text)
+-- Create a variable to store the input value
+local inputValue
+
+-- Create an input field
+tab1:newInput("Key Here", "", function(text)
+    inputValue = text
 end)
 
-tab1.newButton("Button", "Prints Input", function(text)
-    print(text)
+-- Create a button
+tab1:newButton("Button", "Prints Input", function()
+    print(inputValue)
 end)
