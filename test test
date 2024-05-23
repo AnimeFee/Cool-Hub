@@ -7,8 +7,9 @@ local window = DrRayLibrary:Load("DrRay!", "Default")
 -- Create the first tab with an image ID
 local tab = DrRayLibrary.newTab("Tab 1", "ImageIdHere")
 
--- Add a text box and a button to the tab
-local textBox = tab.newTextBox("Text Box", "Enter some text...")
-local button = tab.newButton("Submit", "Prints the text box value", function()
+tab.newInput("Input", "Prints your input.", function(text)
+    print("Entered text in Tab 1: " .. text)
+
+tab.newButton("Submit", "Prints the text box value", function()
     print("Text box value: " .. textBox.getValue())
 end)
