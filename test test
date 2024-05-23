@@ -3,7 +3,7 @@ local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 local window = DrRayLibrary:Load("DrRay!", "Default")
 local tab = DrRayLibrary.newTab("Tab 1", "ImageIdHere")
 
-tab.newInput("Input", "Prints your input.", function(text)
+local textBox = tab.newInput("Input", "Prints your input.", function(text)
     print("Entered text in Tab 1: " .. text)
 end)
 
