@@ -7,6 +7,6 @@ tab1.newInput("Input", "Prints your input.", function(text)
     print("Entered text in Tab 1: " .. text)
 end)
 
-tab1.newButton("Button", "Prints Hello!", function(text)
+tab1.newButton("Button", "Prints Input", function(text)
     print(text)
 end)
